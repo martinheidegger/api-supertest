@@ -1,0 +1,36 @@
+{
+  "name": "api-supertest",
+  "version": "0.0.1",
+  "description": "Beautiful test suite & runner for api tests.",
+  "main": "lib/index.js",
+  "bin": {
+    "api-supertest": "./bin/api-supertest"
+  },
+  "scripts": {
+    "test": "lab"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ikkyotech/api-supertest.git"
+  },
+  "keywords": [
+    "test",
+    "api",
+    "spec"
+  ],
+  "author": "Martin Heidegger <martin.heidegger@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ikkyotech/api-supertest/issues"
+  },
+  "homepage": "https://github.com/ikkyotech/api-supertest",
+  "dependencies": {
+    "async": "^0.9.0",
+    "colors": "^1.0.3",
+    "glob": "^4.0.6",
+    "js-yaml": "^3.2.2",
+    "lab": "^5.0.1",
+    "lodash": "^2.4.1",
+    "supertest": "^0.14.0"
+  }
+}
