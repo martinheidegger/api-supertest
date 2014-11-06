@@ -84,6 +84,7 @@ data     | Data to be passed to a post/put/head/push request
 push, put, post, head | Shortcuts to define a request as (eg.) post & with the given data (eg. ```post: "foo=bar&baz=boz"``` is the same as ```method: post``` and ```data: "foo=bar&baz=boz"```)
 json     | [Joi](https://github.com/hapijs/joi) based json validator to be used for validating files
 result   | Result as a string to validate the content against. (Does not work in combination with ```json```). Can also be a [!!js/function](https://github.com/nodeca/js-yaml#user-content-supported-yaml-types) to perform your own tests.
+maxRedirects | Number of redirects to follow. (default: none)
 after    | A function will be called before this test is run (syntax: [!!js/function](https://github.com/nodeca/js-yaml#user-content-supported-yaml-types))
 
 Test can also contain a (recursive!) ```derive``` statement that allows you to specify multiple tests in a faster fashion:
