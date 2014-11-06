@@ -31,8 +31,8 @@ module.exports = {
 	endpointEnd: function endpointEnd(state) {
 		var item = state.item,
 			error = state.error;
-		process.stdout.clearLine();
-		process.stdout.cursorTo(0);
+		process.stdout.clearLine && process.stdout.clearLine();
+		process.stdout.cursorTo && process.stdout.cursorTo(0);
 		process.stdout.write(renderPrefix(item));
 		if (error) {
 			console.log(colors.red("ERROR"));
