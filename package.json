@@ -1,6 +1,6 @@
 {
   "name": "api-supertest",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Beautiful test suite & runner for api tests.",
   "main": "lib/index.js",
   "bin": {
@@ -18,7 +18,10 @@
     "api",
     "spec"
   ],
-  "author": "Martin Heidegger <martin.heidegger@gmail.com>",
+  "author": {
+    "name": "Martin Heidegger",
+    "email": "martin.heidegger@gmail.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ikkyotech/api-supertest/issues"
@@ -32,5 +35,26 @@
     "lab": "^5.0.1",
     "lodash": "^2.4.1",
     "supertest": "^0.14.0"
-  }
+  },
+  "gitHead": "b12735f1f2c407716abed2c37490e350c028b9d0",
+  "_id": "api-supertest@0.0.1",
+  "_shasum": "a1b7c399d7f329b07c78eef139ab9d8ecd6135b3",
+  "_from": "api-supertest@0.0.1",
+  "_npmVersion": "2.0.0",
+  "_npmUser": {
+    "name": "leichtgewicht",
+    "email": "mh@leichtgewicht.at"
+  },
+  "maintainers": [
+    {
+      "name": "leichtgewicht",
+      "email": "mh@leichtgewicht.at"
+    }
+  ],
+  "dist": {
+    "shasum": "a1b7c399d7f329b07c78eef139ab9d8ecd6135b3",
+    "tarball": "http://registry.npmjs.org/api-supertest/-/api-supertest-0.0.1.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/api-supertest/-/api-supertest-0.0.1.tgz"
 }
