@@ -8,8 +8,10 @@ function indent(text, indent) {
 
 function renderPrefix(item) {
 	var result = colors.bold(item.path);
-	if (item.method === "POST") {
-		result += colors.gray(" (POST " + item.data + ")");
+	if (item.data) {
+		result += colors.gray(" (" + item.method + " " + item.data + ")");
+	} else if (item.method !== "GET") {
+		result += colors.gray(" (" + item.method + ")")
 	}
 	return result + ": ";
 }
