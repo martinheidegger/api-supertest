@@ -1,6 +1,6 @@
 {
   "name": "api-supertest",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Beautiful test suite & runner for api tests.",
   "main": "lib/index.js",
   "bin": {
@@ -31,6 +31,7 @@
     "async": "^0.9.0",
     "colors": "^1.0.3",
     "glob": "^4.0.6",
+    "joi": "^4.7.0",
     "js-yaml": "^3.2.2",
     "lab": "^5.0.1",
     "lodash": "^2.4.1",
