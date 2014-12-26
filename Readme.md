@@ -133,7 +133,7 @@ module.exports = {
 }
 ```
 
-Then you can refer to this new type ```ID``` in the yaml file.
+Then you can refer to this new type ```MY_OBJECT``` in the yaml file.
 
 options.js
 ```yaml
@@ -167,4 +167,4 @@ test({
 
 # Contribute!
 
-Please, please contribute :smiley: I wrote this tool to be comfortable when communicating in the company but its far from project. Even though I took care when structuring it. Open a pull request to fix an [issue](https://github.com/ikkyotech/api-supertest/issues), add an issue. I will make sure to respond as fast as I can.
+Please, please contribute :smiley: I wrote this tool to be comfortable when communicating in the company but its far from perfect. Even though I took care when structuring it. Open a pull request to fix an [issue](https://github.com/ikkyotech/api-supertest/issues), add an issue. I will make sure to respond as fast as I can.
