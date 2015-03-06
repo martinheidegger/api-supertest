@@ -86,7 +86,8 @@ get      | Adds a query string to the path. (replaces the query string if its al
 json     | [Joi](https://github.com/hapijs/joi) based json validator to be used for validating files
 result   | Result as a string to validate the content against. (Does not work in combination with ```json```). Can also be a [!!js/function](https://github.com/nodeca/js-yaml#user-content-supported-yaml-types) to perform your own tests.
 maxRedirects | Number of redirects to follow. (default: none)
-after    | A function will be called before this test is run (syntax: [!!js/function](https://github.com/nodeca/js-yaml#user-content-supported-yaml-types))
+before    | A function will be called before this test is run (syntax: [!!js/function](https://github.com/nodeca/js-yaml#user-content-supported-yaml-types))
+after     | A function will be called after this test is run (syntax: [!!js/function](https://github.com/nodeca/js-yaml#user-content-supported-yaml-types))
 
 Test can also contain a (recursive!) ```derive``` statement that allows you to specify multiple tests in a faster fashion:
 
