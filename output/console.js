@@ -49,6 +49,21 @@ function renderPrefix(item) {
 	} else if (item.method !== "GET") {
 		result += colors.gray(" (" + item.method + ")")
 	}
+	if (item.requestHeader) {
+		var headers = "";
+		Object.keys(item.requestHeader).forEach(function (key) {
+			var value = item.requestHeader[key];
+			if (value) {
+				if (headers !== "") {
+					headers += "; ";
+				}
+				headers += key + " " + value	
+			}
+		})
+		if (headers !== "") {
+			result += colors.gray(" [" + headers + "]")	
+		}
+	}
 	return result + ": ";
 }
 
