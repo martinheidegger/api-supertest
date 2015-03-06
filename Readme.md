@@ -79,8 +79,12 @@ Tests is a list of urls that will be tested for accuracy
 Property | Content
 -------- | -------
 path     | Path to be loaded (eg. ```path: /test``` would result to ```http://github.com/api/test```)
+priority | Optional number (default 1). Entries with higher priority will be executed first.
 method   | Optional http method, will default to get
+context  | (Object, optional) Data context to be used to resolve `${}` blocks (will be merged with the runtime context and during the derivision)
 data     | Data to be passed to a post/put/head/push request
+requestHeader | (Object, optional) A set of headers to be when requesting the resource (will be merged during derive)
+responseHeader | (Object, optional) A set of headers to check the response against (will be merged during derive)
 push, put, post, head | Shortcuts to define a request as (eg.) post & with the given data (eg. ```post: "foo=bar&baz=boz"``` is the same as ```method: post``` and ```data: "foo=bar&baz=boz"```)
 get      | Adds a query string to the path. (replaces the query string if its already there). Add it without the leading "?": eg. ```foo=bar&baz=qux``` this will also set the method to ```get```.
 json     | [Joi](https://github.com/hapijs/joi) based json validator to be used for validating files
@@ -116,6 +120,36 @@ tests:
 ```
 
 *Note: There are more options if you use it [as a library](#as-a-library).*
+
+## Context Variables
+
+It is possible to use context variables in the definitions. The simplest example would look like:
+
+```yaml
+tests:
+  - path: ${my_var}
+    context:
+     my_var: /my_path
+```
+
+This, by itself, is not really useful but it can be helpful if you combine it with `after`, `json` and `priority`:
+
+```yaml
+tests: 
+  - path: /user
+    json: !!type USER
+    priority: 2
+    after: !!js/function
+      function(item, global, cb) {
+        global.context.user_id = item.json.id;
+        cb();
+      }
+  - path: /avatar
+    get: id=${user_id}
+
+```
+
+The example above loads the user first (because of the higher priority). After the data was found it stores the result id in the global context's `user_id` field. Using the new context variable it is possible to load the avatar for a user.
 
 ## type.js
 
