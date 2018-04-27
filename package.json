@@ -7,7 +7,8 @@
     "api-supertest": "./bin/api-supertest"
   },
   "scripts": {
-    "test": "lab"
+    "test": "lab",
+    "test:lint": "standard"
   },
   "repository": {
     "type": "git",
@@ -57,5 +58,8 @@
     "tarball": "http://registry.npmjs.org/api-supertest/-/api-supertest-0.0.1.tgz"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/api-supertest/-/api-supertest-0.0.1.tgz"
+  "_resolved": "https://registry.npmjs.org/api-supertest/-/api-supertest-0.0.1.tgz",
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
 }
