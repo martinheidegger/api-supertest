@@ -1,3 +1,8 @@
 #!/usr/bin/env node
 
-require('../lib/cli').run();
+require('../lib/cli').run(function (error, isSuccess) {
+  if (error) {
+    console.error(error.stack || error)
+  }
+  process.exit(isSuccess && !error ? 0 : 1)
+})
