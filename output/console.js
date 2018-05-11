@@ -62,20 +62,19 @@ module.exports = {
     console.log('\nTests ' + (isSuccess ? 'successful' : 'failed') + '. (' + passed + '/' + total + ')')
   },
   endpointStart: function endpointStart (item) {
-    process.stdout.write(renderPrefix(item) + colors.gray('processing...'))
+    process.stdout.write(renderPrefix(item) + '\n' + colors.gray('... processing'))
   },
   endpointEnd: function endpointEnd (state) {
     const item = state.item
     let error = state.error
     process.stdout.clearLine && process.stdout.clearLine()
     process.stdout.cursorTo && process.stdout.cursorTo(0)
-    process.stdout.write(renderPrefix(item))
     if (error) {
       console.log(colors.red('ERROR'))
       error = processStack(error)
-      console.log('\n' + indent(error, '    ') + '\n')
+      console.log('\n' + indent(error, '    ') + '\n\n')
     } else {
-      console.log(colors.green('OK'))
+      console.log(colors.green('OK') + '\n')
     }
   }
 }
