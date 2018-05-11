@@ -76,7 +76,6 @@ module.exports = {
     process.stdout.write(renderPrefix(item) + '\n' + colors.gray('... processing'))
   },
   endpointEnd: function endpointEnd (state) {
-    const item = state.item
     let error = state.error
     process.stdout.clearLine && process.stdout.clearLine()
     process.stdout.cursorTo && process.stdout.cursorTo(0)
