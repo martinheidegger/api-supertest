@@ -86,6 +86,8 @@ data     | Data to be passed to a post/put/head/push request
 requestHeader | (Object, optional) A set of headers to be when requesting the resource (will be merged during derive)
 responseHeader | (Object, optional) A set of headers to check the response against (will be merged during derive)
 push, put, post, head | Shortcuts to define a request as (eg.) post & with the given data (eg. ```post: "foo=bar&baz=boz"``` is the same as ```method: post``` and ```data: "foo=bar&baz=boz"```)
+username | Username to be used for basic auth
+password | Password to be used for basic auth
 get      | Adds a query string to the path. (replaces the query string if its already there). Add it without the leading "?": eg. ```foo=bar&baz=qux``` this will also set the method to ```get```.
 json     | [Joi](https://github.com/hapijs/joi) based json validator to be used for validating files
 result   | Result as a string to validate the content against. (Does not work in combination with ```json```). Can also be a [!!js/function](https://github.com/nodeca/js-yaml#user-content-supported-yaml-types) to perform your own tests.
