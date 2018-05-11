@@ -27,8 +27,15 @@ function indent (text, indent) {
   return indent + text.split('\n').join('\n' + indent)
 }
 
+const HASH = colors.grey('# ')
+
 function renderPrefix (item) {
   var result = ''
+  if (item.note) {
+    result += HASH + item.note.split('\n').map(function (noteLine) {
+      return colors.cyan(noteLine)
+    }).join(HASH + '\n') + '\n'
+  }
   if (item.username) {
     result += colors.yellow(item.username.substr(0, 4) + '...') + colors.grey(':') + colors.yellow((item.password ? item.password.substr(0, 4) + '...' : '')) + colors.grey('@')
   }
