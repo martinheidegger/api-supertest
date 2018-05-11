@@ -28,7 +28,11 @@ function indent (text, indent) {
 }
 
 function renderPrefix (item) {
-  var result = colors.bold(item.path)
+  var result = ''
+  if (item.username) {
+    result += colors.yellow(item.username.substr(0, 4) + '...') + colors.grey(':') + colors.yellow((item.password ? item.password.substr(0, 4) + '...' : '')) + colors.grey('@')
+  }
+  result += colors.bold(item.path)
   if (item.data) {
     result += colors.gray(' (' + item.method + ' ' + item.data + ')')
   } else if (item.method !== 'GET') {
