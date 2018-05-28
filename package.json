@@ -1,6 +1,6 @@
 {
   "name": "api-supertest",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Beautiful test suite & runner for api tests.",
   "main": "lib/index.js",
   "bin": {
