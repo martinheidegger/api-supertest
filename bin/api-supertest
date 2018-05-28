@@ -21,8 +21,6 @@ const opts = require('yargs')
   .help()
   .argv
 
-console.log(opts)
-
 require('../lib/cli').run(opts, function (error, isSuccess) {
   if (error) {
     console.error(error.stack || error)
