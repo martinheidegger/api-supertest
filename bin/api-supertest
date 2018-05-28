@@ -1,6 +1,29 @@
 #!/usr/bin/env node
+'use strict'
+const opts = require('yargs')
+  .option('spec', {
+    type: 'string',
+    default: './spec'
+  })
+  .option('cwd', {
+    type: 'string',
+    default: process.cwd()
+  })
+  .option('dotEnv', {
+    default: 'false'
+  })
+  .coerce('dotEnv', opt => {
+    if (/^\s*(true|false)\s*$/i.test(opt)) {
+      return Boolean(opt)
+    }
+    return opt
+  })
+  .help()
+  .argv
 
-require('../lib/cli').run(function (error, isSuccess) {
+console.log(opts)
+
+require('../lib/cli').run(opts, function (error, isSuccess) {
   if (error) {
     console.error(error.stack || error)
   }

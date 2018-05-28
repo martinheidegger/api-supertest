@@ -43,6 +43,7 @@ $ npm i api-supertest -g
 ```
 
 Now the command ```api-supertest``` should be available in your command line.
+You can access the help for the command-line flags through `api-supertest --help`.
 
 # Folder Structure
 
@@ -152,6 +153,19 @@ tests:
 ```
 
 The example above loads the user first (because of the higher priority). After the data was found it stores the result id in the global context's `user_id` field. Using the new context variable it is possible to load the avatar for a user.
+
+## Environment variables
+
+In any yaml file you can use the `!!env` prefix to load an environment variable.
+
+_options.yml_
+```yaml
+context:
+  password: !!env TEST_PASSWORD
+```
+
+`api-supertest` comes with support for `.env` variables. If you pass the command-line option `--dotEnv=true` it will
+load the `.env`-file in the current working directory.
 
 ## type.js
 
