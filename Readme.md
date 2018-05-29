@@ -84,6 +84,7 @@ priority | Optional number (default 1). Entries with higher priority will be exe
 method   | Optional http method, will default to get
 context  | (Object, optional) Data context to be used to resolve `${}` blocks (will be merged with the runtime context and during the derivision)
 data     | Data to be passed to a post/put/head/push request
+wait     | Wait a given amount milliseconds before executing the request
 requestHeader | (Object, optional) A set of headers to be when requesting the resource (will be merged during derive)
 responseHeader | (Object, optional) A set of headers to check the response against (will be merged during derive)
 push, put, post, head | Shortcuts to define a request as (eg.) post & with the given data (eg. ```post: "foo=bar&baz=boz"``` is the same as ```method: post``` and ```data: "foo=bar&baz=boz"```)

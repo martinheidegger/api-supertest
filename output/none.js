@@ -11,6 +11,7 @@ module.exports = {
       cb(null, passed === total)
     }
   },
+  endpointWait: skip,
   endpointStart: skip,
   endpointEnd: skip
 }

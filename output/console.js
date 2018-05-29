@@ -63,6 +63,10 @@ function renderPrefix (item) {
   return result + ': '
 }
 
+function writeTitle (item) {
+  console.log(renderPrefix(item))
+}
+
 module.exports = {
   start: function start (base) {
     console.log('Running tests on ' + colors.gray(base) + '\n')
@@ -72,8 +76,19 @@ module.exports = {
     var isSuccess = passed === total
     console.log('\nTests ' + (isSuccess ? 'successful' : 'failed') + '. (' + passed + '/' + total + ')')
   },
+  endpointWait: function endpointStart (item) {
+    writeTitle(item)
+    process.stdout.write(colors.gray('... waiting ' + item.wait + 'ms'))
+  },
   endpointStart: function endpointStart (item) {
-    process.stdout.write(renderPrefix(item) + '\n' + colors.gray('... processing'))
+    if (!item.wait) {
+      writeTitle(item)
+    } else {
+      process.stdout.clearLine && process.stdout.clearLine()
+      process.stdout.cursorTo && process.stdout.cursorTo(0)
+      process.stdout.write(colors.gray('... waited ' + item.wait + 'ms\n'))
+    }
+    process.stdout.write(colors.gray('... processing'))
   },
   endpointEnd: function endpointEnd (state) {
     let error = state.error
